@@ -1,0 +1,80 @@
+{%extends"easy_pdf/candidate.html"%}
+<html>
+{% load static %}
+<head>
+	<title>Candidate Detail</title>
+	
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href = "{% static 'myapp/css/style.css' %}">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+	<div class="container">
+		<header>
+			<img src="{{candidate.profile_img.url}}" alt="img" class="img" width="150" height="150">
+            <div class="row1">
+				<ul>
+					<li class="address"><i class="fa fa-birthday-cake fa-1x"></i>{{candidate.dob}}</li>
+					<li><i class="fa fa-intersex"></i>{{candidate.gender}}</li>
+					<li><i class="fa fa-home fa-1x"></i>{{candidate.state}}</li>
+					<li class="email"><i class="fa fa-envelope fa-1x"></i>{{candidate.email}}</li>
+				</ul>
+			</div><br>
+            <h1>{{candidate.name}}</h1><br>
+			<h2 class="center">{{candidate.about}}</h2>
+			
+		</header>
+		
+		
+		<article>
+			<h2>Education</h2>
+			
+			<div class="row">
+				<ul>
+					<li class="right">
+						<h2>Certification</h2>
+			
+                        <div class="header">{{candidate.certificate}}</div>
+                        <div class="header">{{candidate.organisation}}</div>
+					</li>
+
+					<li class="header">{{candidate.degree}}</li>
+					<li>{{candidate.clg}}</li>
+					<li class="description">{{candidate.grades}}</li>
+				</ul>
+			</div>
+		</article>
+		
+		<article>
+			<h2>Work Experience</h2>
+			
+			<div class="row exp-list">
+				<ul>
+					<li class="right">
+						<h2>Interest</h2>
+			
+			            <div class="header">{{candidate.interest}}</div>
+					</li>
+					<li class="header">{{candidate.role}}, <span>{{candidate.exp}}</span></li>
+					<li><i class="fa fa-caret-right fa-1x"></i>{{candidate.company}}</li>
+				</ul>
+			</div>
+					
+		</article>
+		
+		<article>
+			<h2>Personal Projects</h2>
+			
+			<div class="header">{{candidate.proj}}</div>
+			<a href="{{candidate.link}}"><li>{{candidate.link}}</li></a>
+		</article>
+	</div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

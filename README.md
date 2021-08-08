@@ -17,6 +17,7 @@ cd resumebuilder
 #### After cloning, run following commands:-
 ```
 pip install django[argon2]
+pip install Pillow
 ```
 #### After running commands use following commands:
 ```
